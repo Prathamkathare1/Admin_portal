@@ -48,68 +48,85 @@ if 'query_history' not in st.session_state:
 
 # ==================== LOGIN PAGE ====================
 
+
 if not st.session_state.logged_in:
     st.markdown("""
         <style>
-        .login-header {
+        body, .stApp {
+            background-color: #f6f8fa;
+        }
+        .dumroo-header {
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 0 1rem 0;
         }
-        .login-title {
-            color: #00BFFF;
-            font-size: 3rem;
+        .dumroo-title {
+            color: #0074D9;
+            font-size: 2.7rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            letter-spacing: 1px;
         }
-        .login-subtitle {
-            color: #666;
+        .dumroo-subtitle {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .dumroo-login-box {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 2rem 2.5rem;
+            margin: auto;
+            max-width: 400px;
+        }
+        .dumroo-brand {
+            color: #0074D9;
+            font-weight: 600;
             font-size: 1.2rem;
+            margin-top: 2rem;
+        }
+        .dumroo-footer {
+            text-align: center;
+            color: #888;
+            font-size: 0.95rem;
+            margin-top: 2rem;
         }
         </style>
     """, unsafe_allow_html=True)
-    
+
     st.markdown("""
-        <div class='login-header'>
-            <h1 class='login-title'>🔐 Dumroo Admin Portal</h1>
-            <p class='login-subtitle'>Login to access the admin panel</p>
+        <div class='dumroo-header'>
+            <span style='font-size:2.5rem;'>📚</span>
+            <h1 class='dumroo-title'>Dumroo Admin Portal</h1>
+            <div class='dumroo-subtitle'>Sign in to access your school dashboard</div>
         </div>
     """, unsafe_allow_html=True)
-    
-    col1, col2, col3 = st.columns([1, 2, 1])
-    
-    with col2:
-        st.markdown("### 👤 Admin Login")
-        st.markdown("<br>", unsafe_allow_html=True)
-        
-        email = st.text_input("📧 Email", placeholder="admin@school.com")
-        password = st.text_input("🔑 Password", type="password", placeholder="Enter password")
-        
-        st.markdown("<br>", unsafe_allow_html=True)
-        
-        if st.button("🚀 Login", use_container_width=True, type="primary"):
-            if email and password:
-                success, role = verify_login(email, password)
-                
-                if success:
-                    st.session_state.logged_in = True
-                    st.session_state.admin_role = role
-                    st.success("✅ Login successful!")
-                    st.balloons()
-                    st.rerun()
-                else:
-                    st.error("❌ Invalid credentials. Please try again.")
+
+    st.markdown("<div class='dumroo-login-box'>", unsafe_allow_html=True)
+    st.markdown("### 👤 Admin Login", unsafe_allow_html=True)
+    email = st.text_input("Email", placeholder="admin@school.com")
+    password = st.text_input("Password", type="password", placeholder="Enter password")
+
+    login_btn = st.button("Login", use_container_width=True)
+    if login_btn:
+        if email and password:
+            success, role = verify_login(email, password)
+            if success:
+                st.session_state.logged_in = True
+                st.session_state.admin_role = role
+                st.success("Login successful!")
+                st.balloons()
+                st.rerun()
             else:
-                st.warning("⚠️ Please enter both email and password")
-        
-        st.markdown("---")
-    
+                st.error("Invalid credentials. Please try again.")
+        else:
+            st.warning("Please enter both email and password.")
+    st.markdown("</div>", unsafe_allow_html=True)
+
     st.markdown("""
-        <div style='text-align: center; color: #666; padding: 2rem; margin-top: 3rem;'>
-            <p>🔒 Secure authentication with role-based access control</p>
-            <p>Built with Streamlit & Supabase</p>
-            <p><em>Dumroo AI Query System v1.0</em></p>
-        </div>
+        <div class='dumroo-brand'>Powered by Dumroo AI • Streamlit • Supabase</div>
+        <div class='dumroo-footer'>Secure authentication with role-based access control<br><em>Dumroo AI Query System v1.0</em></div>
     """, unsafe_allow_html=True)
-    
     st.stop()
 
 # ==================== DASHBOARD (Only shows if logged in) ====================
