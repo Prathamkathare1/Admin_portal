@@ -1,0 +1,13 @@
+student_id,name,grade,class,region,homework_status,quiz_score,quiz_name,quiz_date,attendance_rate
+1,Rahul Sharma,8,A,North,submitted,85,Math Quiz 1,2024-11-28,95
+2,Priya Patel,8,A,North,pending,72,Math Quiz 1,2024-11-28,88
+3,Amit Kumar,8,B,North,submitted,90,Math Quiz 1,2024-11-28,92
+4,Sneha Reddy,9,A,South,pending,88,Science Quiz,2024-11-29,96
+5,Vikram Singh,8,A,North,pending,65,Math Quiz 1,2024-11-28,85
+6,Ananya Gupta,9,B,South,submitted,92,Science Quiz,2024-11-29,98
+7,Rohan Verma,8,B,North,submitted,78,Math Quiz 1,2024-11-28,90
+8,Isha Nair,9,A,South,pending,81,Science Quiz,2024-11-29,94
+9,Karan Mehta,8,A,North,submitted,88,Math Quiz 1,2024-11-28,93
+10,Divya Joshi,9,B,South,submitted,95,Science Quiz,2024-11-29,97
+11,Aditya Rao,8,B,North,pending,68,Math Quiz 1,2024-11-28,82
+12,Kavya Iyer,9,A,South,submitted,91,Science Quiz,2024-11-29,96

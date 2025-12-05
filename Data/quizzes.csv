@@ -1,0 +1,10 @@
+
+quiz_id,quiz_name,grade,class,region,scheduled_date,subject,total_marks
+1,English Quiz,8,A,North,2024-12-10,English,100
+2,History Test,8,B,North,2024-12-12,History,100
+3,Physics Quiz,9,A,South,2024-12-11,Physics,100
+4,Chemistry Quiz,9,B,South,2024-12-13,Chemistry,100
+5,Math Test 2,8,A,North,2024-12-15,Mathematics,100
+6,Biology Quiz,9,A,South,2024-12-14,Biology,100
+7,Geography Test,8,B,North,2024-12-16,Geography,100
+8,Computer Science Quiz,9,B,South,2024-12-17,Computer Science,100

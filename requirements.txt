@@ -1,0 +1,16 @@
+
+
+streamlit>=1.29.0
+pandas>=2.0.0
+python-dotenv>=1.0.0
+supabase>=2.0.0
+
+# Optional: For AI-powered queries (Bonus Feature)
+# Uncomment these lines if you want to use AI features
+# langchain>=0.1.0
+# langchain-openai>=0.0.2
+# langchain-experimental>=0.0.47
+# openai>=1.6.1
+
+# Optional: For better table display
+# tabulate>=0.9.0
