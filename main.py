@@ -101,23 +101,6 @@ if not st.session_state.logged_in:
                 st.warning("⚠️ Please enter both email and password")
         
         st.markdown("---")
-        
-        with st.expander("📋 Demo Credentials (For Testing)"):
-            st.markdown("""
-            **Test Accounts:**
-            
-            **1. Mr. Rajesh Singh** (Grade 8, Class A, North)
-            - Email: `rajesh@school.com`
-            - Password: `admin123`
-            
-            **2. Ms. Lakshmi Reddy** (Grade 9, South)
-            - Email: `lakshmi@school.com`
-            - Password: `admin123`
-            
-            **3. Mr. Anil Patel** (Grade 8, North)
-            - Email: `anil@school.com`
-            - Password: `admin123`
-            """)
     
     st.markdown("""
         <div style='text-align: center; color: #666; padding: 2rem; margin-top: 3rem;'>
