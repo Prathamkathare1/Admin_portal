@@ -9,6 +9,12 @@ from datetime import datetime
 load_dotenv()
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+
+# Validate Supabase credentials
+if not SUPABASE_URL or not SUPABASE_KEY:
+    st.error("❌ Supabase credentials not found. Please set SUPABASE_URL and SUPABASE_KEY in environment variables or .streamlit/secrets.toml")
+    st.stop()
+
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 st.set_page_config(
